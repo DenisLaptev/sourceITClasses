@@ -60,4 +60,27 @@ public class Book {
                 ", year=" + year +
                 '}';
     }
+
+    //Методы, относящиеся непосредственно к книге.
+    public boolean isOlderThenYear(int year) {
+        return this.year < year;
+    }
+
+    public boolean hasThisAuthor(String human) {
+
+        for (int j = 0; j < authors.length; j++) {
+            if (authors[j].equals(human)) {
+                return true;
+                //Если данный человек является автором, то мы возвращаем true
+                //и выходим из метода.
+            }
+        }
+        return false;
+        //Если данный человек не встретился в цикле, то мы дошли до этой строчки.
+        //Возвращаем false и выходим из метода.
+    }
+
+    public boolean hasTreeOrMoreAuthors() {
+        return (authors.length >= 3);
+    }
 }
